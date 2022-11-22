@@ -26,5 +26,11 @@ pipeline {
       sh 'mvn clean package'
        }
     }
+    
+    stage ('Grype scanning docker image') {
+      steps {
+      sh 'grype gesellix/trufflehog'
+      }
+    }
   }
  }
