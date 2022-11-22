@@ -32,5 +32,11 @@ pipeline {
       sh 'grype gesellix/trufflehog'
       }
     }
+    
+    stage('syft scanning docker image') {
+      steps {
+      sh 'syft gesellix/trufflehog'
+      }
+    }
   }
  }
